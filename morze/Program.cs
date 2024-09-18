@@ -1,6 +1,4 @@
-﻿using System.Threading;
-
-var alphabet = new Dictionary<char,string> () {
+﻿var alphabet = new Dictionary<char,string> () {
     ['A'] = ".-",
     ['B'] = "-...",
     ['C'] = "-.-.",
@@ -49,7 +47,7 @@ for (int i = 0; i < text.Length; i++) {
     string code = alphabet.ContainsKey(letter) ? alphabet[letter] : "";
     Console.WriteLine(letter + " (" + code + ")");
     for (int j = 0; j < code.Length; j++) {
-        Console.Beep(1000, code[j] == '.' ? dit : dah);
+        Sound.Beep(1000, code[j] == '.' ? dit : dah);
         Thread.Sleep(dit);
     }
     Thread.Sleep(dah);
